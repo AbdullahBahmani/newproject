@@ -1,0 +1,16 @@
+ dotnet dev-certs https -ep $env:USERPROFILE\.aspnet\https\CoffeeAPI.pfx -p 123456
+ dotnet dev-certs https --trust
+
+
+$env:USERPROFILE
+
+
+ --> user-secrets for storing the passwords or connection strings in local systems
+dotnet user-secrets set "Kestrel:Certidicates:Development:Password" "123456"
+
+
+dotnet dev-certs https --clean
+dotnet dev-certs https --trust
+
+
+docker-compose up --build
