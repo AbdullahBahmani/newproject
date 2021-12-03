@@ -1,0 +1,11 @@
+C:\Tidabanken\projects\Azure-Containers\sampleApiOnAzureContainer\app\sampleApiOnAzureContainer.exe
+C:\Tidabanken\projects\Azure-Containers\sampleApiOnAzureContainer\app\appsettings.Development.json
+C:\Tidabanken\projects\Azure-Containers\sampleApiOnAzureContainer\app\appsettings.json
+C:\Tidabanken\projects\Azure-Containers\sampleApiOnAzureContainer\app\sampleApiOnAzureContainer.dll
+C:\Tidabanken\projects\Azure-Containers\sampleApiOnAzureContainer\app\sampleApiOnAzureContainer.deps.json
+C:\Tidabanken\projects\Azure-Containers\sampleApiOnAzureContainer\app\sampleApiOnAzureContainer.runtimeconfig.json
+C:\Tidabanken\projects\Azure-Containers\sampleApiOnAzureContainer\app\sampleApiOnAzureContainer.pdb
+C:\Tidabanken\projects\Azure-Containers\sampleApiOnAzureContainer\app\Microsoft.OpenApi.dll
+C:\Tidabanken\projects\Azure-Containers\sampleApiOnAzureContainer\app\Swashbuckle.AspNetCore.Swagger.dll
+C:\Tidabanken\projects\Azure-Containers\sampleApiOnAzureContainer\app\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Tidabanken\projects\Azure-Containers\sampleApiOnAzureContainer\app\Swashbuckle.AspNetCore.SwaggerUI.dll

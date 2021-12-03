@@ -1,0 +1,60 @@
+->publish aspNetCore api
+
+dotnet publish -c release -o app/ .
+
+
+
+-> build docker container local
+docker build -t sampleapionazureontainer  
+
+
+-> run docker container 
+docker run -p 8181:80 sampleapionazureontainer
+
+
+
+
+-> to create azure container 
+1- install azure cli
+2- login to azure cli with
+    az login
+3- use browser to login
+
+
+-> create new resource group
+az group create --name azure-containers-rg --location northeurope
+
+
+-> create Azure Container Registry
+az acr create -g azure-containers-rg --name sampleapicontainer --sku Basic --admin-enabled true
+
+
+
+-> show credentials for the new container
+az acr credential show -n sampleapicontainer
+
+
+-> tag docker container
+docker tag sampleapionazureontainer sampleapicontainer.azurecr.io/sampleapionazureontainer:v1
+
+
+
+->connect to Registry and login
+docker login https://sampleapicontainer.azurecr.io -u [username] sampleapicontainer -p [passowrd] xP=80UlNdODkCpxY=2eFiPSntvIc1oNb
+
+
+-> push docker image to azure container
+docker push sampleapicontainer.azurecr.io/sampleapionazureontainer:v1
+
+
+->create a webapp to use the container as source code
+-> first create appservice plan for the webapp
+az appservice plan create -n AzureContainersPlan -g azure-containers-rg --sku S1 --is-linux
+-> create the webapp for azure container  [use ` character in powershell]
+ az webapp create -g azure-containers-rg -p AzureContainersPlan -n apiincontainerwebapp --runtime "`"DOTNET|6.0`"" 
+
+
+ -> getting our image from azure container registry into webapp
+az webapp config container set -n apiincontainerwebapp -g azure-containers-rg --docker-custom-image-name sampleapicontainer.azurecr.io/sampleapionazureontainer:v1 --docker-registry-server-url https://sampleapicontainer.azurecr.io --docker-registry-server-user sampleapicontainer --docker-registry-server-password xP=80UlNdODkCpxY=2eFiPSntvIc1oNb
+
+

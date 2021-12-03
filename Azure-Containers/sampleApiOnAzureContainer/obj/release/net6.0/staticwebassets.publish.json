@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "i/BOzSq2kHpc8aIodVd7YqmlwoZS4MegUZhZoax9PUE=",
+  "Source": "sampleApiOnAzureContainer",
+  "BasePath": "_content/sampleApiOnAzureContainer",
+  "Mode": "Default",
+  "ManifestType": "Publish",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
