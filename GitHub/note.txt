@@ -1,0 +1,21 @@
+how to clone from azure devops and git in VScode
+-> install git extention
+-> Ctrl + p to open command pallete
+->select Git:clone
+->Provide the repository URL
+->select a folder as the repo folder on the local pc/machine
+->then it will start cloning the repository
+
+
+->also add the remote repository
+git remote add origin https://abdullahbahmani0333@dev.azure.com/abdullahbahmani0333/CICDinAzureDevOps/_git/CICDinAzureDevOps
+
+
+-> after any changes we should 
+-> 1) commit the changes 
+-> 2) push to the repository
+
+git commit -a
+//write a description in the file which is open, then save and close it.
+git status
+git push

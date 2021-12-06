@@ -1,0 +1,34 @@
+->Log in to the Azure portal
+-> open Azure Cloud Shell and select Bash
+
+
+
+-> first create a azrue resource group
+az group create --name [name] --location [location]
+
+->example
+az group create --name PandocOnAzure --location northeurope
+
+
+
+->create a azure container 
+az container create -g [resource group name] --name [container name] --image [image for container] --ip-address [public/private]
+
+->example
+az container create -g PandocOnAzure --name mypandoc --image dwolters/pandoc-http --ip-address public
+
+
+-> show the created container in cloud Shell
+az container show -g [resource group name] --name [container name]
+
+->example
+az container show -g PandocOnAzure --name mypandoc
+
+
+
+-> delete azure container
+az container delete -g [resource group name] --name [container name]
+
+
+-> example
+az container delete -g PandocOnAzure --name mypandoc
