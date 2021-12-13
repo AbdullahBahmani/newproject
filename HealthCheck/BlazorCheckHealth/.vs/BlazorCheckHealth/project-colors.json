@@ -1,0 +1,21 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "7fb40b4c-9340-48b8-9f3d-42009895b723": {
+      "ProjectGuid": "7fb40b4c-9340-48b8-9f3d-42009895b723",
+      "DisplayName": "BlazorCheckHealth",
+      "ColorIndex": 0
+    },
+    "a7793140-f120-4d32-bf86-4996913efce1": {
+      "ProjectGuid": "a7793140-f120-4d32-bf86-4996913efce1",
+      "DisplayName": "HealthChecker",
+      "ColorIndex": 1
+    },
+    "7a865e84-afe6-442e-b8f0-aa831e22b867": {
+      "ProjectGuid": "7a865e84-afe6-442e-b8f0-aa831e22b867",
+      "DisplayName": "MVCDemoForHealthCheck",
+      "ColorIndex": 2
+    }
+  },
+  "NextColorIndex": 3
+}

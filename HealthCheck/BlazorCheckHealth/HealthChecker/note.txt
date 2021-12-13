@@ -1,0 +1,53 @@
+﻿-> First we install the two nuget packages we installed in the BlazorCheckHealth project
+-> We can also copy them from .csproj file in that project to .csproj file of the HeathChecker project.
+
+<ItemGroup>
+    <PackageReference Include="AspNetCore.HealthChecks.UI" Version="5.0.1" />
+    <PackageReference Include="AspNetCore.HealthChecks.UI.Client" Version="5.0.1" />
+  </ItemGroup>
+
+
+
+->install the following nuget package for storing the information inMemory database
+-> later we can try to save the information in sqldatabases as well.
+AspNetCore.HealthChecks.UI.InMemory.Storage
+
+-> this is also helpful when working with microservices to checks their health
+
+
+
+-> in the startup.cs we add the following services
+services.AddHealthChecksUI().AddInMemoryStorage();
+
+
+-> then we add a new endpoint:
+endpoints.MapHealthChecksUI();
+
+
+-> right click on the solution and select "Select Startup Projects" and select both projects to be run at the same time
+
+
+-> add the following section to appsettings.json in HealthChecker project
+"HealthChecksUI": {
+"HealthChecks": [
+    {
+    "Name": "Blazor Check Health Demo",
+    "Uri": "http://localhost:44331/health"
+    }
+],
+"EvaluationTimeOnSeconds": 5,
+"MinimumSecondsBetweenFailureNotification": 60
+},
+
+
+
+-> then run the project and go to the healthchecks-ui endpoint for this project and look at the beautiful UI That it provides us. 
+
+
+->we can group the information provided in the healthchecker based on the project
+-> to do it repeat creating the a new mvc project and add the same nuget packages.
+
+
+
+
+

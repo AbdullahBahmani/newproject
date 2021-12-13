@@ -1,0 +1,252 @@
+﻿--> in this project we are going to work with RedisCache
+
+
+--> follow the steps below:
+--> since in this project, we are using local data and there is not delay of DB, so we have to make a delay on purpose.
+--> in WeatherForecastService.cs file add the following code after creating a random object
+await Task.Delay(1500);
+--> we need some other changes and that function should look like this:
+public async Task<WeatherForecast[]> GetForecastAsync(DateTime startDate)
+        {
+            var rng = new Random();
+            await Task.Delay(1500);
+            return Enumerable.Range(1, 5).Select(index => new WeatherForecast
+            {
+                Date = startDate.AddDays(index),
+                TemperatureC = rng.Next(-20, 55),
+                Summary = Summaries[rng.Next(Summaries.Length)]
+            }).ToArray();
+        }
+
+
+
+--> then we will use Docker to setup RedisCache to use in this project
+--> Goto command prompt and start the rest from there :
+--> we create a docker image for redis by the following code:
+docker run --name my-redis -p 5002:6379 -d redis
+
+
+--> with the following codes we can see all the docker containers
+docker ps -a
+
+
+--> to connect a container (redis in this example) we can use the following code: it give a shell access to the image
+docker exec -it my-redis sh
+
+
+--> to access the command line of redis use the following code:
+redis-cli
+
+--> redis is a key-value pair database
+--> to test the redis database is running we use the following code:
+ping
+
+--> in return it should give PONG which means it is running
+
+
+--> to select the first database we use:
+select 0
+
+--> now we are in the first database and we can do operations here
+--> to see the size of database:
+dbsize
+--> to see any key and value in the first database
+scan 0
+
+
+
+--> to work with Redis we need to add two nuget packages:
+Microsoft.Extensions.Caching.StackExchangeRedis
+StackExchange.Redis
+
+
+--> then we go to the startup.cs
+--> ConfigureServices method we add the following service
+services.AddStackExchangeRedisCache(options =>
+        {
+            options.Configuration = Configuration.GetConnectionString("Redis");
+            options.InstanceName = "RedisDemo_"; //this helps to have unique k-v in all applications which are using Redis and make the instances unique
+
+
+        });
+
+--> now go to the appsettings.json add the connectionstrings to the redis there. it is very simple as :
+"ConnectionStrings": {
+"Redis": "localhost:5002"
+}
+
+
+--> add a new folder in the root of the project and call it "Extensions"
+--> then add a class inside it and call it "DistributedCacheExtensions"
+--> the class should look like this:
+
+using Microsoft.Extensions.Caching.Distributed;
+using System;
+using System.Text.Json;
+using System.Threading.Tasks;
+
+namespace BlazorAppWithRedisCache.Extensions
+{
+public static class DistributedCacheExtensions
+{
+    public static async Task SetRecordAsync<T> (this IDistributedCache cache, //the word this here means that the SetRecord is added as a method to class IDistributedCache and its objects. we can later use cache.SetRecordAsyc()
+        string recordId,
+        T data,
+        TimeSpan? absoluteExpireTime= null,
+        TimeSpan? unusedExpireTime=null)
+    {
+        var options = new DistributedCacheEntryOptions();
+        options.AbsoluteExpirationRelativeToNow = absoluteExpireTime ?? TimeSpan.FromSeconds(60);
+        options.SlidingExpiration = unusedExpireTime;
+        var jsonData = JsonSerializer.Serialize(data);
+        await cache.SetStringAsync(recordId, jsonData, options);
+    }
+
+    public static async Task<T> GetRecordAsync<T> (this IDistributedCache cache,
+        string recordId)
+    {
+        var jsonData = await cache.GetStringAsync(recordId);
+        if (jsonData == null)
+        {
+            return default(T);
+        }
+        return JsonSerializer.Deserialize<T>(jsonData);
+    }
+            
+}
+}
+
+
+
+--> no we go to the Fetchdata.razor
+-->first add the usings
+@using BlazorAppWithRedisCache.Extensions
+
+--> inject the cache object
+@inject Microsoft.Extensions.Caching.Distributed.IDistributedCache cache
+-->we can cut the "Microsoft.Extensions.Caching.Distributed" from above and put as using in _imports.razor file
+
+
+
+--> in the FetchData.razor we comment the methid " OnInitializedAsync" because it keep refreshes and loads the data
+--> we add the following varibale to show from where data is being loaded:
+private string loadLocation = "";
+
+--> we add the following varible to show that the data is coming from cache
+private string isCachData = "";
+
+
+--> Then we create a method to load a data when a button is clicked
+--> the function is:
+private async Task LoadForecast()
+{
+    forecasts = null;
+    loadLocation = null;
+    string recordKey = "WeatherForecast_" + DateTime.Now.ToString("yyyyMMdd_hhmm");
+    forecasts = await cache.GetRecordAsync<WeatherForecast[]>(recordKey);
+    if (forecasts is null)
+    {
+        forecasts = await ForecastService.GetForecastAsync(DateTime.Now);
+        loadLocation = $"Loaded from API at {DateTime.Now}";
+        isCacheData = "";
+        await cache.SetRecordAsync(recordKey, forecasts);
+    }
+    else
+    {
+        loadLocation = $"Loaded from the cache at {DateTime.Now}";
+        isCacheData = "text-danger";
+    }
+}
+
+
+--> then we go and add a button on top and it will be like:
+<button class="btn btn-primary" @onclick="LoadForecast">Load Forecast</button>
+
+
+--> add another if to check based on location and loaded data like:
+@if(forecasts is null && loadLocation == "")
+{
+    <p><em>Click the button to load the forecast</em></p>
+}
+
+else if (forecasts is null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <div class="h3 @isCacheData">@loadLocation</div> 
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Date</th>
+                <th>Temp. (C)</th>
+                <th>Temp. (F)</th>
+                <th>Summary</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var forecast in forecasts)
+            {
+                <tr>
+                    <td>@forecast.Date.ToShortDateString()</td>
+                    <td>@forecast.TemperatureC</td>
+                    <td>@forecast.TemperatureF</td>
+                    <td>@forecast.Summary</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+
+
+
+--> run the project
+--> first check the redis on docker is running
+--> check the content of the redis cache by scan 0
+
+--> click on the fetchdata button on the blazor app
+--> it will load the data from api and store it in the redis
+--> we can check the redis to see whether it is on there by scan 0 again
+--> it will give the key of the cache data
+--> to see the content of the key data use the following code
+hgetall [Key]
+--> it will load the data from redis cache and show in the command prompt
+
+
+
+
+--> now its time to use Azure Redis cache
+--> login to Azure portal and continuoue there
+--> create a resource --> under databases select Auzre Cache for redis
+--> fill in the form 
+
+
+
+--> After creating the redis cache on azure
+--> it will give a connection string that we can connect from our code to it
+-->for storing connectionstring from azure redis cache we can put it in appsettings.json but:
+--> here we are going to save it in user secrets
+--> for that right click on the project and select manage user secrets
+-->it will open secrets.json file and there we can put our secrets from azure redis cache
+--> the content of the secret.json will look like this:
+{
+  "ConnectionStrings": {
+    "Redis": "testtidsbankenrediscache.redis.cache.windows.net:6380,password=gBN6fP1i612nZ5Qjg1GlP9a3iqXf3uKVSAzCaNXITYg=,ssl=True,abortConnect=False"
+  }
+}
+
+
+--> we do not need to change anything else because secret.json will override anything it finds in appsettings.json. 
+-->Here it will override the ConnectionStrings 
+--> if we run the project and load the data from cache and use other browsers it will also load from cache as they are connected to cache until the time it deletes the cache and time expires
+--> run the project and go to azure redis
+--> there will be a console button to go to the redis cache console
+-->again we can see anything there 
+
+
+--> we can now stop, remove our docker container 
+docker ps -a  //to get the container_id
+docker stop container_id
+docker rm container_id

@@ -1,0 +1,177 @@
+﻿
+
+
+
+-> in order to check the health of the system we need to add some nuget packages
+1) AspNetCore.HealthChecks.UI
+2) AspNetCore.HealthChecks.UI.Client
+
+
+->Then go to startup.cs class and in the ConfigureServices add the following configure
+-> for the demo and hard coded healtcheck:
+
+->When the service is working healthy
+services.AddHealthChecks()
+		.AddCheck("Foo Service", () =>
+			HealthCheckResult.Healthy("The check of the foo service worked."));
+
+
+->When the service is not working healthy
+services.AddHealthChecks()
+		.AddCheck("Foo Service", () =>
+			HealthCheckResult.Unhealthy("The check of the foo service did not worked."));
+
+
+->When the service it no working well, but working
+services.AddHealthChecks()
+		.AddCheck("Foo Service", () =>
+			HealthCheckResult.Degraded("The check of the foo service did not worked well."));
+
+
+
+->import using using Microsoft.Extensions.Diagnostics.HealthChecks;
+
+
+
+-> Go down to the Confure method and add the following endpoint
+endpoints.MapHealthChecks("/health");
+
+
+
+-> if there are more than one heathckeck and they have different result like Healthy, Unhealthy and Degraded, the result will be Unhealthy because 
+it is the lowest level of health for a service
+
+
+
+-> if we want  to differentiate the different check and show different messages we need to change our health endpoint
+endpoints.MapHealthChecks("/health", new HealthCheckOptions() 
+{
+	ResponseWriter= UIResponseWriter.WriteHealthCheckUIResponse
+});
+
+->import using these two 
+using Microsoft.AspNetCore.Diagnostics.HealthChecks;
+using HealthChecks.UI.Client;
+
+
+
+->if we just want to see the overall health situation and not all the information, we can add another endpoint like this:
+endpoints.MapHealthChecks("/quickhealth", new HealthCheckOptions()
+{
+	Predicate = _ => false
+});
+
+
+->This endpoint is mainly to show that the application is overally running...
+We use this to ping to see that check are available and do not run the checks.
+
+
+
+
+
+->Tags can be added to the HealthCheck to later on filter based upon tags
+-> to do this we need to change AddCheck method and add new[] {"tag list here"};
+->like:
+
+services.AddHealthChecks()
+            .AddCheck("Foo Service",
+                () => HealthCheckResult.Degraded("The check of the foo service did not worked well."),
+                new[] {"service"})
+            .AddCheck("Bar Service",
+                () => HealthCheckResult.Healthy("The check of the foo service worked."),
+                new[] {"service"})
+            .AddCheck("Database",
+                () => HealthCheckResult.Unhealthy("The check of the database did not worked."),
+                new[] {"database", "sql"});
+
+
+
+-> then we can add a new endpoint that checks based on filtering
+-> like:
+
+
+endpoints.MapHealthChecks("/health/services", new HealthCheckOptions()
+            {
+                Predicate = reg => reg.Tags.Contains("service"),
+                ResponseWriter = UIResponseWriter.WriteHealthCheckUIResponse
+
+            });
+
+
+-> it is hard to read json files. to make it easier we create a new project that checks the health of other projects
+->we call it HealthChecker
+-> the rest of notes are in another note.txt file in that prject.
+
+
+
+
+
+
+..
+..
+..
+..
+
+-> after creating healthchecker with solid check, comeback and continue from here
+...
+
+
+->Create a new folder in the rool of this project and call it "Health Checks"
+->Add a new cs class and call it ResponseTimeHealthCheck.cs
+-> This class will implement the interface called "IHealthCheck"
+-> inside the class write the following code:
+
+using Microsoft.Extensions.Diagnostics.HealthChecks;
+using System;
+using System.Threading;
+using System.Threading.Tasks;
+
+using Microsoft.Extensions.Diagnostics.HealthChecks;
+using System;
+using System.Threading;
+using System.Threading.Tasks;
+
+namespace BlazorCheckHealth.HealtchChecks
+{
+    public class ResponseTimeHealthCheck : IHealthCheck
+    {
+        private Random rnd = new Random();
+        public Task<HealthCheckResult> CheckHealthAsync(HealthCheckContext context,
+            CancellationToken cancellationToken = default)
+        {
+            int responseTimeInMS = rnd.Next(1, 300);
+            if (responseTimeInMS < 100 )
+            {
+                return Task.FromResult(HealthCheckResult
+                    .Healthy($"THe response time looks good ({responseTimeInMS})."));
+            }
+            else if (responseTimeInMS < 200 )
+            {
+                return Task.FromResult(HealthCheckResult
+                   .Degraded($"THe response time is a bit slow ({responseTimeInMS})."));
+            }
+            else
+            {
+                return Task.FromResult(HealthCheckResult
+                  .Unhealthy($"THe response time is unacceptable ({responseTimeInMS})."));
+            }
+            
+        }
+    }
+
+
+    
+}
+
+
+
+
+-> then go to the startup.cs class and add a new AddCheck with the type of "ResponseTimeHealthCheck"
+-> the AddCheck will look like this:
+.AddCheck<ResponseTimeHealthCheck> ("Network speed test",null,new[] {"service"})
+
+
+->then we should add ResponseTimeHealthCheck as singleton like below:
+services.AddSingleton<ResponseTimeHealthCheck>();
+
+--> note that all the checks should be like ResponseTimeHealthChec class in the HealthChcks folder.
