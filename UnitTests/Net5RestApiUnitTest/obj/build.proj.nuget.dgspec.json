@@ -1,0 +1,50 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Tidabanken\\projects\\UnitTests\\Net5RestApiUnitTest\\build.proj": {}
+  },
+  "projects": {
+    "C:\\Tidabanken\\projects\\UnitTests\\Net5RestApiUnitTest\\build.proj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Tidabanken\\projects\\UnitTests\\Net5RestApiUnitTest\\build.proj",
+        "projectName": "build",
+        "projectPath": "C:\\Tidabanken\\projects\\UnitTests\\Net5RestApiUnitTest\\build.proj",
+        "packagesPath": "C:\\Users\\TD-Abdullah\\.nuget\\packages\\",
+        "outputPath": "C:\\Tidabanken\\projects\\UnitTests\\Net5RestApiUnitTest\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\TD-Abdullah\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net45"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net45": {
+            "targetAlias": "net45",
+            "projectReferences": {}
+          }
+        }
+      },
+      "frameworks": {
+        "net45": {
+          "targetAlias": "net45",
+          "dependencies": {
+            "Microsoft.NETFramework.ReferenceAssemblies": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[1.0.0, )",
+              "autoReferenced": true
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.403\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
