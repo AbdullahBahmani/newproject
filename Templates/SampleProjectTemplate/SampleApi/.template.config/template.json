@@ -1,0 +1,45 @@
+{
+    "$schema" : "https://json.schemastore.org/template",
+    "author" : "Abdullah Bahmani",
+    "classifications": ["WebApi"],
+    "identity": "SampleApi",
+    "name":"Super-Project Custom Template",
+    "shortName": "sp-webapi",
+    "sourceName": "SamleApi",
+    "tags": {
+        "language": "C#",
+        "type": "project"
+    },
+    "preferNameDirectory": true,
+
+
+    "symbols":{
+        "ModelName" :{
+            "type": "parameter",
+            "description": "The target name for the business model in the web api.",
+            "datatype" :"text",
+            "fileRename": "{ModelName}",
+            "replaces": "{ModelName}",
+            "defaultValue": "Item"
+        },
+        "ModelObject":{
+            "type": "parameter",
+            "description": "The target name for object of a model class in the web api.",
+            "datatype" :"text",
+           "replaces": "{ModelObject}",
+            "defaultValue": "item"
+
+        },
+        "ModelKey":{
+            "type": "parameter",
+            "description": "The target name for Key propery of a model class in the web api.",
+            "datatype" :"text",
+           "replaces": "{ModelKey}",
+            "defaultValue": "Id"
+        }
+    
+        
+        
+    }
+    
+}

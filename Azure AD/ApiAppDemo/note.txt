@@ -1,0 +1,15 @@
+everything so far is in the azure and webapi
+
+
+
+
+
+/// from here
+we need to get token to send request to our api
+we go to the client app registered in the azure and overview and endpoint > copy the value on outh token endpoint
+
+
+
+paste it in insomnia/postman as an address
+
+
