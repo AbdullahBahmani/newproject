@@ -5,6 +5,7 @@ using Microsoft.Identity.Web.Resource;
 namespace ApiAppDemo.Controllers;
 
 [ApiController]
+[Authorize]
 [Route("[controller]")]
 public class WeatherForecastController : ControllerBase
 {
@@ -21,7 +22,7 @@ public class WeatherForecastController : ControllerBase
     }
 
     // [Authorize(Roles="user:read,admin:fullcontrol")]
-    [RequiredScope(RequiredScopesConfigurationKey = "admin-fullcontrol")]
+     [RequiredScope(RequiredScopesConfigurationKey = "admin-fullcontrol")]
     [HttpGet(Name = "GetWeatherForecast")]
     public IEnumerable<WeatherForecast> Get()
     {

@@ -29,11 +29,12 @@ function App() {
       .acquireTokenSilent(request)
       .then((response) => {
         setAccessToken(response.accessToken)
+        localStorage.setItem('token', response.accessToken);
       })
       .catch((e) => {
         instance.acquireTokenPopup(request).then((response) => {
-          setAccessToken(response.accessToken)
-          console.log(response.accessToken)
+          setAccessToken(response.accessToken);
+          
         })
       })
     }

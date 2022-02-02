@@ -18,6 +18,11 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+app.UseAuthentication();
+app.UseAuthorization();
+
+app.MapControllers();
+
 app.UseCors(builder =>
 {
     builder
@@ -25,10 +30,4 @@ app.UseCors(builder =>
     .AllowAnyMethod()
     .AllowAnyHeader();
 });
-app.UseAuthentication();
-app.UseAuthorization();
-
-app.MapControllers();
-
-
 app.Run();

@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/81660766-784d-418a-ab59-77d26f12bc53/resourceGroups/appsvc_windows_centralus/providers/Microsoft.Web/sites/api-testpepsimax",
+    "appService.deploySubpath": "publish"
+}

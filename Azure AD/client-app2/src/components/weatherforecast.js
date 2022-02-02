@@ -14,8 +14,9 @@ const WeatherForecast = (props) => {
   //   }
   // };
   // const msalInstance = new msal.PublicClientApplication(msalConfig);
-  
-   const token=props.accessToken;
+  const token= localStorage.getItem('token');
+  //  const token=props.token;
+ console.log(token);
   useEffect(() => {
     (async () => {
 
@@ -35,7 +36,7 @@ const WeatherForecast = (props) => {
       // const token = await tokenreqResponse['access_token'];
 
       const response = await axios.get(
-        'https://localhost:7015/WeatherForecast',
+        'https://api-testpepsimax.azurewebsites.net/WeatherForecast',
         {
           headers: {
             Authorization:

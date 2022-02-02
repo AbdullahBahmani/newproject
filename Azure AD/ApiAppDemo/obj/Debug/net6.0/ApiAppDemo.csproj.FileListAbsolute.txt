@@ -54,3 +54,13 @@ C:\Tidabanken\projects\Azure AD\ApiAppDemo\obj\Debug\net6.0\ApiAppDemo.dll
 C:\Tidabanken\projects\Azure AD\ApiAppDemo\obj\Debug\net6.0\ref\ApiAppDemo.dll
 C:\Tidabanken\projects\Azure AD\ApiAppDemo\obj\Debug\net6.0\ApiAppDemo.pdb
 C:\Tidabanken\projects\Azure AD\ApiAppDemo\obj\Debug\net6.0\ApiAppDemo.genruntimeconfig.cache
+C:\Tidabanken\projects\Azure AD\ApiAppDemo\bin\Debug\net6.0\publish\web.config
+C:\Tidabanken\projects\Azure AD\ApiAppDemo\bin\Debug\net6.0\publish\ApiAppDemo.deps.json
+C:\Tidabanken\projects\Azure AD\ApiAppDemo\bin\Debug\net6.0\publish\ApiAppDemo.runtimeconfig.json
+C:\Tidabanken\projects\Azure AD\ApiAppDemo\bin\Debug\net6.0\publish\appsettings.Development.json
+C:\Tidabanken\projects\Azure AD\ApiAppDemo\bin\Debug\net6.0\publish\appsettings.json
+C:\Tidabanken\projects\Azure AD\ApiAppDemo\bin\Debug\net6.0\publish\publish\web.config
+C:\Tidabanken\projects\Azure AD\ApiAppDemo\bin\Debug\net6.0\publish\publish\ApiAppDemo.deps.json
+C:\Tidabanken\projects\Azure AD\ApiAppDemo\bin\Debug\net6.0\publish\publish\ApiAppDemo.runtimeconfig.json
+C:\Tidabanken\projects\Azure AD\ApiAppDemo\bin\Debug\net6.0\publish\publish\appsettings.Development.json
+C:\Tidabanken\projects\Azure AD\ApiAppDemo\bin\Debug\net6.0\publish\publish\appsettings.json
