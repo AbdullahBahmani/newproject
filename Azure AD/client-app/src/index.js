@@ -3,20 +3,14 @@ import ReactDOM from 'react-dom'
 import './index.css'
 import App from './App'
 import reportWebVitals from './reportWebVitals'
-
-import { MsalProvider } from '@azure/msal-react'
-import { Configuration, PublicClientApplication } from '@azure/msal-browser'
-const configuration = {
-  auth: {
-    clientId: 'd34b312f-e473-479a-b3db-22d0107f9cbc',
-    authority:
-      'https://login.microsoftonline.com/cdece2d6-4fe7-4c9d-93b3-4e53c6261de2',
-  },
-}
-const pca = new PublicClientApplication(configuration)
+import "bootstrap/dist/css/bootstrap.min.css";
+import { PublicClientApplication } from "@azure/msal-browser";
+import { MsalProvider } from "@azure/msal-react";
+import { msalConfig } from "./config/authConfig";
+const msalInstance = new PublicClientApplication(msalConfig)
 
 const AppProvider = () => (
-  <MsalProvider instance={pca}>
+  <MsalProvider instance={msalInstance}>
     <App />
   </MsalProvider>
 )

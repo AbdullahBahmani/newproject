@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Identity.Web.Resource;
 
 namespace ApiAppDemo.Controllers;
 
@@ -19,7 +20,8 @@ public class WeatherForecastController : ControllerBase
         _logger = logger;
     }
 
-    [Authorize(Roles="user:read,admin:fullcontrol")]
+    // [Authorize(Roles="user:read,admin:fullcontrol")]
+    [RequiredScope(RequiredScopesConfigurationKey = "admin-fullcontrol")]
     [HttpGet(Name = "GetWeatherForecast")]
     public IEnumerable<WeatherForecast> Get()
     {

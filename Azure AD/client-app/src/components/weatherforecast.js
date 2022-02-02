@@ -1,22 +1,26 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
+import { loginRequest } from '../config/authConfig';
 import * as msal from '@azure/msal-browser';
+import { useMsal } from '@azure/msal-react';
+
 const WeatherForecast = (props) => {
   const [weather, setWeather] = useState([])
-  const msalConfig = {
-    auth :{
-      clientId:'d34b312f-e473-479a-b3db-22d0107f9cbc',
-      authority:'https://login.microsoftonline.com/cdece2d6-4fe7-4c9d-93b3-4e53c6261de2',
-    }
-  };
-  const msalInstance = new msal.PublicClientApplication(msalConfig);
-  
 
+  // const msalConfig = {
+  //   auth :{
+  //     clientId:'d34b312f-e473-479a-b3db-22d0107f9cbc',
+  //     authority:'https://login.microsoftonline.com/cdece2d6-4fe7-4c9d-93b3-4e53c6261de2',
+  //   }
+  // };
+  // const msalInstance = new msal.PublicClientApplication(msalConfig);
+  
+   const token=props.accessToken;
   useEffect(() => {
     (async () => {
 
-      const result = await msalInstance.acquireTokenSilent();
-      const token = result.accessToken();
+      // const result = await msalInstance.acquireTokenSilent(loginRequest);
+      //  const token = result.accessToken();
 
 
       // const tokenreqResponse = await axios.get('https://login.microsoftonline.com/cdece2d6-4fe7-4c9d-93b3-4e53c6261de2/oauth2/token', {
