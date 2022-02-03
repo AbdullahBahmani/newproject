@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "LF5iK5P2OQsfboWqAJtObckYh+CCBNEKFBZlo2gmHAWbX8srbVwGyRt2vNpK8qAK/9IJs4QrkvpX1htqaz6gEg==",
+  "dgSpecHash": "OPuw6IJkEeXyt0rVS+/xW/PjedCbhBJ5UREfmfB9DpjSKVpVIPWm1CvgxxpApMsY0blid5XYOuiqcBsq5EKF3w==",
   "success": true,
   "projectFilePath": "C:\\Tidabanken\\projects\\LoggingInAspNetCore\\LoggingApi\\LoggingApi.csproj",
   "expectedPackageFiles": [
@@ -13,6 +13,7 @@
     "C:\\Users\\TD-Abdullah\\.nuget\\packages\\microsoft.extensions.dependencymodel\\3.0.0\\microsoft.extensions.dependencymodel.3.0.0.nupkg.sha512",
     "C:\\Users\\TD-Abdullah\\.nuget\\packages\\microsoft.extensions.fileproviders.abstractions\\3.1.8\\microsoft.extensions.fileproviders.abstractions.3.1.8.nupkg.sha512",
     "C:\\Users\\TD-Abdullah\\.nuget\\packages\\microsoft.extensions.hosting.abstractions\\3.1.8\\microsoft.extensions.hosting.abstractions.3.1.8.nupkg.sha512",
+    "C:\\Users\\TD-Abdullah\\.nuget\\packages\\microsoft.extensions.http\\3.1.9\\microsoft.extensions.http.3.1.9.nupkg.sha512",
     "C:\\Users\\TD-Abdullah\\.nuget\\packages\\microsoft.extensions.logging\\5.0.0\\microsoft.extensions.logging.5.0.0.nupkg.sha512",
     "C:\\Users\\TD-Abdullah\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\5.0.0\\microsoft.extensions.logging.abstractions.5.0.0.nupkg.sha512",
     "C:\\Users\\TD-Abdullah\\.nuget\\packages\\microsoft.extensions.options\\5.0.0\\microsoft.extensions.options.5.0.0.nupkg.sha512",
@@ -21,6 +22,8 @@
     "C:\\Users\\TD-Abdullah\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
     "C:\\Users\\TD-Abdullah\\.nuget\\packages\\microsoft.netcore.targets\\1.1.0\\microsoft.netcore.targets.1.1.0.nupkg.sha512",
     "C:\\Users\\TD-Abdullah\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
+    "C:\\Users\\TD-Abdullah\\.nuget\\packages\\prometheus-net\\5.0.2\\prometheus-net.5.0.2.nupkg.sha512",
+    "C:\\Users\\TD-Abdullah\\.nuget\\packages\\prometheus-net.aspnetcore\\5.0.2\\prometheus-net.aspnetcore.5.0.2.nupkg.sha512",
     "C:\\Users\\TD-Abdullah\\.nuget\\packages\\runtime.native.system\\4.3.0\\runtime.native.system.4.3.0.nupkg.sha512",
     "C:\\Users\\TD-Abdullah\\.nuget\\packages\\serilog\\2.10.0\\serilog.2.10.0.nupkg.sha512",
     "C:\\Users\\TD-Abdullah\\.nuget\\packages\\serilog.aspnetcore\\4.1.0\\serilog.aspnetcore.4.1.0.nupkg.sha512",

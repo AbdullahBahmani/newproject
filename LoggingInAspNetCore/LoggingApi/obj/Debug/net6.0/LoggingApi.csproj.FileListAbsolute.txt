@@ -35,3 +35,6 @@ C:\Tidabanken\projects\LoggingInAspNetCore\LoggingApi\obj\Debug\net6.0\LoggingAp
 C:\Tidabanken\projects\LoggingInAspNetCore\LoggingApi\obj\Debug\net6.0\ref\LoggingApi.dll
 C:\Tidabanken\projects\LoggingInAspNetCore\LoggingApi\obj\Debug\net6.0\LoggingApi.pdb
 C:\Tidabanken\projects\LoggingInAspNetCore\LoggingApi\obj\Debug\net6.0\LoggingApi.genruntimeconfig.cache
+C:\Tidabanken\projects\LoggingInAspNetCore\LoggingApi\bin\Debug\net6.0\Prometheus.NetCore.dll
+C:\Tidabanken\projects\LoggingInAspNetCore\LoggingApi\bin\Debug\net6.0\Prometheus.NetStandard.dll
+C:\Tidabanken\projects\LoggingInAspNetCore\LoggingApi\bin\Debug\net6.0\Prometheus.AspNetCore.dll

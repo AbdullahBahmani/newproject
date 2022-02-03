@@ -1,1 +1,56 @@
 2022-02-03 08:56:19.180 +01:00 [INF] Application is shutting down...
+2022-02-03 15:53:08.985 +01:00 [INF] Now listening on: https://localhost:7103
+2022-02-03 15:53:09.009 +01:00 [INF] Now listening on: http://localhost:5017
+2022-02-03 15:53:09.011 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-02-03 15:53:09.012 +01:00 [INF] Hosting environment: Development
+2022-02-03 15:53:09.012 +01:00 [INF] Content root path: C:\Tidabanken\projects\LoggingInAspNetCore\LoggingApi\
+2022-02-03 15:53:56.898 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7103/weatherforecast - -
+2022-02-03 15:53:56.944 +01:00 [INF] Executing endpoint 'LoggingApi.Controllers.WeatherForecastController.Get (LoggingApi)'
+2022-02-03 15:53:56.951 +01:00 [INF] Route matched with {action = "Get", controller = "WeatherForecast"}. Executing controller action with signature System.Collections.Generic.IEnumerable`1[LoggingApi.WeatherForecast] Get() on controller LoggingApi.Controllers.WeatherForecastController (LoggingApi).
+2022-02-03 15:53:56.957 +01:00 [INF] Executing ObjectResult, writing value of type 'LoggingApi.WeatherForecast[]'.
+2022-02-03 15:53:56.978 +01:00 [INF] Executed action LoggingApi.Controllers.WeatherForecastController.Get (LoggingApi) in 23.7879ms
+2022-02-03 15:53:56.979 +01:00 [INF] Executed endpoint 'LoggingApi.Controllers.WeatherForecastController.Get (LoggingApi)'
+2022-02-03 15:53:56.984 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7103/weatherforecast - - - 200 - application/json;+charset=utf-8 89.3205ms
+2022-02-03 15:54:01.337 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7103/weatherforecast - -
+2022-02-03 15:54:01.338 +01:00 [INF] Executing endpoint 'LoggingApi.Controllers.WeatherForecastController.Get (LoggingApi)'
+2022-02-03 15:54:01.338 +01:00 [INF] Route matched with {action = "Get", controller = "WeatherForecast"}. Executing controller action with signature System.Collections.Generic.IEnumerable`1[LoggingApi.WeatherForecast] Get() on controller LoggingApi.Controllers.WeatherForecastController (LoggingApi).
+2022-02-03 15:54:01.339 +01:00 [INF] Executing ObjectResult, writing value of type 'LoggingApi.WeatherForecast[]'.
+2022-02-03 15:54:01.339 +01:00 [INF] Executed action LoggingApi.Controllers.WeatherForecastController.Get (LoggingApi) in 0.7532ms
+2022-02-03 15:54:01.339 +01:00 [INF] Executed endpoint 'LoggingApi.Controllers.WeatherForecastController.Get (LoggingApi)'
+2022-02-03 15:54:01.340 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7103/weatherforecast - - - 200 - application/json;+charset=utf-8 2.5866ms
+2022-02-03 15:54:01.995 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7103/weatherforecast - -
+2022-02-03 15:54:01.996 +01:00 [INF] Executing endpoint 'LoggingApi.Controllers.WeatherForecastController.Get (LoggingApi)'
+2022-02-03 15:54:01.996 +01:00 [INF] Route matched with {action = "Get", controller = "WeatherForecast"}. Executing controller action with signature System.Collections.Generic.IEnumerable`1[LoggingApi.WeatherForecast] Get() on controller LoggingApi.Controllers.WeatherForecastController (LoggingApi).
+2022-02-03 15:54:01.996 +01:00 [INF] Executing ObjectResult, writing value of type 'LoggingApi.WeatherForecast[]'.
+2022-02-03 15:54:01.996 +01:00 [INF] Executed action LoggingApi.Controllers.WeatherForecastController.Get (LoggingApi) in 0.1974ms
+2022-02-03 15:54:01.996 +01:00 [INF] Executed endpoint 'LoggingApi.Controllers.WeatherForecastController.Get (LoggingApi)'
+2022-02-03 15:54:01.996 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7103/weatherforecast - - - 200 - application/json;+charset=utf-8 0.9977ms
+2022-02-03 15:54:02.568 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7103/weatherforecast - -
+2022-02-03 15:54:02.568 +01:00 [INF] Executing endpoint 'LoggingApi.Controllers.WeatherForecastController.Get (LoggingApi)'
+2022-02-03 15:54:02.568 +01:00 [INF] Route matched with {action = "Get", controller = "WeatherForecast"}. Executing controller action with signature System.Collections.Generic.IEnumerable`1[LoggingApi.WeatherForecast] Get() on controller LoggingApi.Controllers.WeatherForecastController (LoggingApi).
+2022-02-03 15:54:02.569 +01:00 [INF] Executing ObjectResult, writing value of type 'LoggingApi.WeatherForecast[]'.
+2022-02-03 15:54:02.569 +01:00 [INF] Executed action LoggingApi.Controllers.WeatherForecastController.Get (LoggingApi) in 0.452ms
+2022-02-03 15:54:02.569 +01:00 [INF] Executed endpoint 'LoggingApi.Controllers.WeatherForecastController.Get (LoggingApi)'
+2022-02-03 15:54:02.569 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7103/weatherforecast - - - 200 - application/json;+charset=utf-8 1.2627ms
+2022-02-03 15:54:04.190 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7103/weatherforecast - -
+2022-02-03 15:54:04.190 +01:00 [INF] Executing endpoint 'LoggingApi.Controllers.WeatherForecastController.Get (LoggingApi)'
+2022-02-03 15:54:04.190 +01:00 [INF] Route matched with {action = "Get", controller = "WeatherForecast"}. Executing controller action with signature System.Collections.Generic.IEnumerable`1[LoggingApi.WeatherForecast] Get() on controller LoggingApi.Controllers.WeatherForecastController (LoggingApi).
+2022-02-03 15:54:04.191 +01:00 [INF] Executing ObjectResult, writing value of type 'LoggingApi.WeatherForecast[]'.
+2022-02-03 15:54:04.191 +01:00 [INF] Executed action LoggingApi.Controllers.WeatherForecastController.Get (LoggingApi) in 0.2145ms
+2022-02-03 15:54:04.191 +01:00 [INF] Executed endpoint 'LoggingApi.Controllers.WeatherForecastController.Get (LoggingApi)'
+2022-02-03 15:54:04.191 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7103/weatherforecast - - - 200 - application/json;+charset=utf-8 0.7422ms
+2022-02-03 15:54:04.806 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7103/weatherforecast - -
+2022-02-03 15:54:04.806 +01:00 [INF] Executing endpoint 'LoggingApi.Controllers.WeatherForecastController.Get (LoggingApi)'
+2022-02-03 15:54:04.806 +01:00 [INF] Route matched with {action = "Get", controller = "WeatherForecast"}. Executing controller action with signature System.Collections.Generic.IEnumerable`1[LoggingApi.WeatherForecast] Get() on controller LoggingApi.Controllers.WeatherForecastController (LoggingApi).
+2022-02-03 15:54:04.806 +01:00 [INF] Executing ObjectResult, writing value of type 'LoggingApi.WeatherForecast[]'.
+2022-02-03 15:54:04.807 +01:00 [INF] Executed action LoggingApi.Controllers.WeatherForecastController.Get (LoggingApi) in 0.1584ms
+2022-02-03 15:54:04.807 +01:00 [INF] Executed endpoint 'LoggingApi.Controllers.WeatherForecastController.Get (LoggingApi)'
+2022-02-03 15:54:04.807 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7103/weatherforecast - - - 200 - application/json;+charset=utf-8 0.5478ms
+2022-02-03 15:54:05.422 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7103/weatherforecast - -
+2022-02-03 15:54:05.422 +01:00 [INF] Executing endpoint 'LoggingApi.Controllers.WeatherForecastController.Get (LoggingApi)'
+2022-02-03 15:54:05.422 +01:00 [INF] Route matched with {action = "Get", controller = "WeatherForecast"}. Executing controller action with signature System.Collections.Generic.IEnumerable`1[LoggingApi.WeatherForecast] Get() on controller LoggingApi.Controllers.WeatherForecastController (LoggingApi).
+2022-02-03 15:54:05.422 +01:00 [INF] Executing ObjectResult, writing value of type 'LoggingApi.WeatherForecast[]'.
+2022-02-03 15:54:05.423 +01:00 [INF] Executed action LoggingApi.Controllers.WeatherForecastController.Get (LoggingApi) in 0.2407ms
+2022-02-03 15:54:05.423 +01:00 [INF] Executed endpoint 'LoggingApi.Controllers.WeatherForecastController.Get (LoggingApi)'
+2022-02-03 15:54:05.423 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7103/weatherforecast - - - 200 - application/json;+charset=utf-8 0.6860ms
+2022-02-03 16:05:20.173 +01:00 [INF] Application is shutting down...

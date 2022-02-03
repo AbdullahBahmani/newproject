@@ -1,3 +1,4 @@
+using Prometheus;
 using Serilog;
 
 namespace LoggingApi
@@ -28,6 +29,13 @@ namespace LoggingApi
 
             app.UseAuthorization();
             app.MapControllers();
+            app.UseRouting();
+            app.UseHttpMetrics();
+            app.UseEndpoints(endpoints =>
+            {
+                endpoints.MapControllers();
+                endpoints.MapMetrics();
+            });
         }
 
         private static void ConfigureServices(WebApplicationBuilder builder)

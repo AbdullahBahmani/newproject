@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using Prometheus;
 
 namespace LoggingApi.Controllers;
 
@@ -6,6 +7,7 @@ namespace LoggingApi.Controllers;
 [Route("[controller]")]
 public class WeatherForecastController : ControllerBase
 {
+    private static readonly Counter ApiCallCounter = Metrics.CreateCounter("api_call_counter", "Number of time the api is called");
     private static readonly string[] Summaries = new[]
     {
         "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
@@ -23,6 +25,7 @@ public class WeatherForecastController : ControllerBase
     {
         try
         {
+            ApiCallCounter.Inc();
             return Enumerable.Range(1, 5).Select(index => new WeatherForecast
             {
                 Date = DateTime.Now.AddDays(index),
