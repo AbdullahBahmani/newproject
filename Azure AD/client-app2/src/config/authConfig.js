@@ -18,12 +18,12 @@ export const msalConfig = {
   };
   
   // Add the endpoints here for Microsoft Graph API services you'd like to use.
-  export const graphConfig = {
-      graphMeEndpoint: "https://localhost:7015/WeatherForecast"
-  };
+  // export const graphConfig = {
+  //     graphMeEndpoint: "https://localhost:7015/WeatherForecast"
+  // };
 
 
-  export const apiConfig = {
-    resourceUri: "https://localhost:7015/WeatherForecast",
-    resourceScopes: ["api://507cce57-62c8-4e89-9afc-3424a2b350ab/admin-fullcontrol"]
-}
+  // export const apiConfig = {
+//   //   resourceUri: "https://localhost:7015/WeatherForecast",
+//   //   resourceScopes: ["api://507cce57-62c8-4e89-9afc-3424a2b350ab/admin-fullcontrol"]
+// }

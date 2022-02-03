@@ -22,7 +22,7 @@ public class WeatherForecastController : ControllerBase
     }
 
     // [Authorize(Roles="user:read,admin:fullcontrol")]
-     [RequiredScope(RequiredScopesConfigurationKey = "admin-fullcontrol")]
+    [RequiredScope(RequiredScopesConfigurationKey = "admin-fullcontrol")]
     [HttpGet(Name = "GetWeatherForecast")]
     public IEnumerable<WeatherForecast> Get()
     {

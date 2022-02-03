@@ -16,7 +16,7 @@ function App() {
   const { instance, accounts, inProgress } = useMsal()
   const [accessToken, setAccessToken] = useState(null)
 
-  const name = accounts[0] && accounts[0].name
+  const name = accounts[0] && accounts[0].name 
 
   function RequestAccessToken() {
     const request = {
@@ -33,7 +33,7 @@ function App() {
       })
       .catch((e) => {
         instance.acquireTokenPopup(request).then((response) => {
-          setAccessToken(response.accessToken);
+          // setAccessToken(response.accessToken);
           
         })
       })
