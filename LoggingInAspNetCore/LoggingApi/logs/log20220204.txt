@@ -1,0 +1,31 @@
+2022-02-04 07:47:30.677 +01:00 [FTL] Failed to bind to address https://127.0.0.1:7103: address already in use.
+2022-02-04 07:48:43.131 +01:00 [INF] Application is shutting down...
+2022-02-04 07:48:48.759 +01:00 [INF] Now listening on: https://localhost:7103
+2022-02-04 07:48:48.788 +01:00 [INF] Now listening on: http://localhost:5017
+2022-02-04 07:48:48.791 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-02-04 07:48:48.791 +01:00 [INF] Hosting environment: Development
+2022-02-04 07:48:48.791 +01:00 [INF] Content root path: C:\Tidabanken\projects\LoggingInAspNetCore\LoggingApi\
+2022-02-04 07:49:07.318 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7103/metrics - -
+2022-02-04 07:49:07.356 +01:00 [INF] Executing endpoint 'Prometheus metrics'
+2022-02-04 07:49:07.389 +01:00 [INF] Executed endpoint 'Prometheus metrics'
+2022-02-04 07:49:07.392 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7103/metrics - - - 200 - text/plain;+version=0.0.4;+charset=utf-8 75.6390ms
+2022-02-04 07:49:07.590 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7103/favicon.ico - -
+2022-02-04 07:49:07.601 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7103/favicon.ico - - - 404 0 - 11.2651ms
+2022-02-04 07:49:57.594 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7103/metrics - -
+2022-02-04 07:49:57.594 +01:00 [INF] Executing endpoint 'Prometheus metrics'
+2022-02-04 07:49:57.600 +01:00 [INF] Executed endpoint 'Prometheus metrics'
+2022-02-04 07:49:57.601 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7103/metrics - - - 200 - text/plain;+version=0.0.4;+charset=utf-8 6.7839ms
+2022-02-04 07:50:12.292 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7103/metrics - -
+2022-02-04 07:50:12.292 +01:00 [INF] Executing endpoint 'Prometheus metrics'
+2022-02-04 07:50:12.295 +01:00 [INF] Executed endpoint 'Prometheus metrics'
+2022-02-04 07:50:12.296 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7103/metrics - - - 200 - text/plain;+version=0.0.4;+charset=utf-8 3.2661ms
+2022-02-04 08:01:18.060 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7103/metrics - -
+2022-02-04 08:01:18.061 +01:00 [INF] Executing endpoint 'Prometheus metrics'
+2022-02-04 08:01:18.063 +01:00 [INF] Executed endpoint 'Prometheus metrics'
+2022-02-04 08:01:18.063 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7103/metrics - - - 200 - text/plain;+version=0.0.4;+charset=utf-8 3.2046ms
+2022-02-04 10:14:50.819 +01:00 [INF] Now listening on: https://localhost:7103
+2022-02-04 10:14:50.844 +01:00 [INF] Now listening on: http://localhost:5017
+2022-02-04 10:14:50.846 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-02-04 10:14:50.846 +01:00 [INF] Hosting environment: Development
+2022-02-04 10:14:50.846 +01:00 [INF] Content root path: C:\Tidabanken\projects\LoggingInAspNetCore\LoggingApi\
+2022-02-04 11:01:57.098 +01:00 [INF] Application is shutting down...

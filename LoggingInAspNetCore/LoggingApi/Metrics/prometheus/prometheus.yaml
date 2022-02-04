@@ -16,4 +16,8 @@ scrape_configs:
     static_configs:
       - targets:
           - "host.docker.internal:9323"
+  - job_name: LoggingApi
+    static_configs:
+      - targets:
+          - "LoggingApi:80"
 

@@ -8,6 +8,11 @@
     ".NETCoreApp,Version=v6.0": {
       "LoggingApi/1.0.0": {
         "dependencies": {
+          "OpenTelemetry.Exporter.Console": "1.1.0",
+          "OpenTelemetry.Exporter.Jaeger": "1.1.0",
+          "OpenTelemetry.Extensions.Hosting": "1.0.0-rc9",
+          "OpenTelemetry.Instrumentation.AspNetCore": "1.0.0-rc9",
+          "OpenTelemetry.Instrumentation.Http": "1.0.0-rc9",
           "Serilog.AspNetCore": "4.1.0",
           "Serilog.Settings.Configuration": "3.3.0",
           "Serilog.Sinks.File": "5.0.0",
@@ -18,8 +23,13 @@
           "LoggingApi.dll": {}
         }
       },
+      "Microsoft.AspNetCore.Http.Features/2.1.1": {
+        "dependencies": {
+          "Microsoft.Extensions.Primitives": "5.0.0"
+        }
+      },
       "Microsoft.Extensions.ApiDescription.Server/3.0.0": {},
-      "Microsoft.Extensions.Configuration/2.0.0": {
+      "Microsoft.Extensions.Configuration/2.1.0": {
         "dependencies": {
           "Microsoft.Extensions.Configuration.Abstractions": "3.1.8"
         }
@@ -29,9 +39,9 @@
           "Microsoft.Extensions.Primitives": "5.0.0"
         }
       },
-      "Microsoft.Extensions.Configuration.Binder/2.0.0": {
+      "Microsoft.Extensions.Configuration.Binder/2.1.0": {
         "dependencies": {
-          "Microsoft.Extensions.Configuration": "2.0.0"
+          "Microsoft.Extensions.Configuration": "2.1.0"
         }
       },
       "Microsoft.Extensions.DependencyInjection/5.0.0": {
@@ -80,16 +90,22 @@
         }
       },
       "Microsoft.Extensions.Logging.Abstractions/5.0.0": {},
+      "Microsoft.Extensions.Logging.Configuration/2.1.0": {
+        "dependencies": {
+          "Microsoft.Extensions.Logging": "5.0.0",
+          "Microsoft.Extensions.Options.ConfigurationExtensions": "2.1.0"
+        }
+      },
       "Microsoft.Extensions.Options/5.0.0": {
         "dependencies": {
           "Microsoft.Extensions.DependencyInjection.Abstractions": "5.0.0",
           "Microsoft.Extensions.Primitives": "5.0.0"
         }
       },
-      "Microsoft.Extensions.Options.ConfigurationExtensions/2.0.0": {
+      "Microsoft.Extensions.Options.ConfigurationExtensions/2.1.0": {
         "dependencies": {
           "Microsoft.Extensions.Configuration.Abstractions": "3.1.8",
-          "Microsoft.Extensions.Configuration.Binder": "2.0.0",
+          "Microsoft.Extensions.Configuration.Binder": "2.1.0",
           "Microsoft.Extensions.DependencyInjection.Abstractions": "5.0.0",
           "Microsoft.Extensions.Options": "5.0.0"
         }
@@ -102,6 +118,90 @@
           "lib/netstandard2.0/Microsoft.OpenApi.dll": {
             "assemblyVersion": "1.2.3.0",
             "fileVersion": "1.2.3.0"
+          }
+        }
+      },
+      "OpenTelemetry/1.2.0-rc2": {
+        "dependencies": {
+          "Microsoft.Extensions.Logging": "5.0.0",
+          "Microsoft.Extensions.Logging.Configuration": "2.1.0",
+          "OpenTelemetry.Api": "1.2.0-rc2",
+          "System.Collections.Immutable": "1.4.0",
+          "System.Reflection.Emit.Lightweight": "4.7.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/OpenTelemetry.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.2.0.389"
+          }
+        }
+      },
+      "OpenTelemetry.Api/1.2.0-rc2": {
+        "dependencies": {
+          "System.Diagnostics.DiagnosticSource": "6.0.0",
+          "System.Reflection.Emit.Lightweight": "4.7.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/OpenTelemetry.Api.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.2.0.389"
+          }
+        }
+      },
+      "OpenTelemetry.Exporter.Console/1.1.0": {
+        "dependencies": {
+          "OpenTelemetry": "1.2.0-rc2"
+        },
+        "runtime": {
+          "lib/netstandard2.0/OpenTelemetry.Exporter.Console.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.1.0.174"
+          }
+        }
+      },
+      "OpenTelemetry.Exporter.Jaeger/1.1.0": {
+        "dependencies": {
+          "OpenTelemetry": "1.2.0-rc2"
+        },
+        "runtime": {
+          "lib/netstandard2.1/OpenTelemetry.Exporter.Jaeger.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.1.0.174"
+          }
+        }
+      },
+      "OpenTelemetry.Extensions.Hosting/1.0.0-rc9": {
+        "dependencies": {
+          "Microsoft.Extensions.Hosting.Abstractions": "3.1.8",
+          "OpenTelemetry": "1.2.0-rc2"
+        },
+        "runtime": {
+          "lib/netstandard2.0/OpenTelemetry.Extensions.Hosting.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.389"
+          }
+        }
+      },
+      "OpenTelemetry.Instrumentation.AspNetCore/1.0.0-rc9": {
+        "dependencies": {
+          "Microsoft.AspNetCore.Http.Features": "2.1.1",
+          "OpenTelemetry": "1.2.0-rc2"
+        },
+        "runtime": {
+          "lib/net6.0/OpenTelemetry.Instrumentation.AspNetCore.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.389"
+          }
+        }
+      },
+      "OpenTelemetry.Instrumentation.Http/1.0.0-rc9": {
+        "dependencies": {
+          "OpenTelemetry": "1.2.0-rc2"
+        },
+        "runtime": {
+          "lib/netstandard2.0/OpenTelemetry.Instrumentation.Http.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.389"
           }
         }
       },
@@ -205,7 +305,7 @@
       "Serilog.Settings.Configuration/3.3.0": {
         "dependencies": {
           "Microsoft.Extensions.DependencyModel": "3.0.0",
-          "Microsoft.Extensions.Options.ConfigurationExtensions": "2.0.0",
+          "Microsoft.Extensions.Options.ConfigurationExtensions": "2.1.0",
           "Serilog": "2.10.0"
         },
         "runtime": {
@@ -289,6 +389,7 @@
           }
         }
       },
+      "System.Collections.Immutable/1.4.0": {},
       "System.Console/4.3.0": {
         "dependencies": {
           "Microsoft.NETCore.Platforms": "1.1.0",
@@ -296,6 +397,11 @@
           "System.IO": "4.3.0",
           "System.Runtime": "4.3.0",
           "System.Text.Encoding": "4.3.0"
+        }
+      },
+      "System.Diagnostics.DiagnosticSource/6.0.0": {
+        "dependencies": {
+          "System.Runtime.CompilerServices.Unsafe": "6.0.0"
         }
       },
       "System.Globalization/4.3.0": {
@@ -323,6 +429,7 @@
           "System.Runtime": "4.3.0"
         }
       },
+      "System.Reflection.Emit.Lightweight/4.7.0": {},
       "System.Reflection.Extensions/4.3.0": {
         "dependencies": {
           "Microsoft.NETCore.Platforms": "1.1.0",
@@ -353,6 +460,7 @@
           "Microsoft.NETCore.Targets": "1.1.0"
         }
       },
+      "System.Runtime.CompilerServices.Unsafe/6.0.0": {},
       "System.Runtime.Handles/4.3.0": {
         "dependencies": {
           "Microsoft.NETCore.Platforms": "1.1.0",
@@ -410,6 +518,13 @@
       "serviceable": false,
       "sha512": ""
     },
+    "Microsoft.AspNetCore.Http.Features/2.1.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-VklZ7hWgSvHBcDtwYYkdMdI/adlf7ebxTZ9kdzAhX+gUs5jSHE9mZlTamdgf9miSsxc1QjNazHXTDJdVPZKKTw==",
+      "path": "microsoft.aspnetcore.http.features/2.1.1",
+      "hashPath": "microsoft.aspnetcore.http.features.2.1.1.nupkg.sha512"
+    },
     "Microsoft.Extensions.ApiDescription.Server/3.0.0": {
       "type": "package",
       "serviceable": true,
@@ -417,12 +532,12 @@
       "path": "microsoft.extensions.apidescription.server/3.0.0",
       "hashPath": "microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512"
     },
-    "Microsoft.Extensions.Configuration/2.0.0": {
+    "Microsoft.Extensions.Configuration/2.1.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-SsI4RqI8EH00+cYO96tbftlh87sNUv1eeyuBU1XZdQkG0RrHAOjWgl7P0FoLeTSMXJpOnfweeOWj2d1/5H3FxA==",
-      "path": "microsoft.extensions.configuration/2.0.0",
-      "hashPath": "microsoft.extensions.configuration.2.0.0.nupkg.sha512"
+      "sha512": "sha512-SS8ce1GYQTkZoOq5bskqQ+m7xiXQjnKRiGfVNZkkX2SX0HpXNRsKnSUaywRRuCje3v2KT9xeacsM3J9/G2exsQ==",
+      "path": "microsoft.extensions.configuration/2.1.0",
+      "hashPath": "microsoft.extensions.configuration.2.1.0.nupkg.sha512"
     },
     "Microsoft.Extensions.Configuration.Abstractions/3.1.8": {
       "type": "package",
@@ -431,12 +546,12 @@
       "path": "microsoft.extensions.configuration.abstractions/3.1.8",
       "hashPath": "microsoft.extensions.configuration.abstractions.3.1.8.nupkg.sha512"
     },
-    "Microsoft.Extensions.Configuration.Binder/2.0.0": {
+    "Microsoft.Extensions.Configuration.Binder/2.1.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-IznHHzGUtrdpuQqIUdmzF6TYPcsYHONhHh3o9dGp39sX/9Zfmt476UnhvU0UhXgJnXXAikt/MpN6AuSLCCMdEQ==",
-      "path": "microsoft.extensions.configuration.binder/2.0.0",
-      "hashPath": "microsoft.extensions.configuration.binder.2.0.0.nupkg.sha512"
+      "sha512": "sha512-Fls0O54Ielz1DiVYpcmiUpeizN1iKGGI5yAWAoShfmUvMcQ8jAGOK1a+DaflHA5hN9IOKvmSos0yewDYAIY0ZA==",
+      "path": "microsoft.extensions.configuration.binder/2.1.0",
+      "hashPath": "microsoft.extensions.configuration.binder.2.1.0.nupkg.sha512"
     },
     "Microsoft.Extensions.DependencyInjection/5.0.0": {
       "type": "package",
@@ -494,6 +609,13 @@
       "path": "microsoft.extensions.logging.abstractions/5.0.0",
       "hashPath": "microsoft.extensions.logging.abstractions.5.0.0.nupkg.sha512"
     },
+    "Microsoft.Extensions.Logging.Configuration/2.1.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-nMAcTACzW37zc3f7n5fIYsRDXtjjQA2U/kiE4xmuSLn7coCIeDfFTpUhJ+wG/3vwb5f1lFWNpyXGyQdlUCIXUw==",
+      "path": "microsoft.extensions.logging.configuration/2.1.0",
+      "hashPath": "microsoft.extensions.logging.configuration.2.1.0.nupkg.sha512"
+    },
     "Microsoft.Extensions.Options/5.0.0": {
       "type": "package",
       "serviceable": true,
@@ -501,12 +623,12 @@
       "path": "microsoft.extensions.options/5.0.0",
       "hashPath": "microsoft.extensions.options.5.0.0.nupkg.sha512"
     },
-    "Microsoft.Extensions.Options.ConfigurationExtensions/2.0.0": {
+    "Microsoft.Extensions.Options.ConfigurationExtensions/2.1.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-Y/lGICwO27fCkQRK3tZseVzFjZaxfGmui990E67sB4MuiPzdJHnJDS/BeYWrHShSSBgCl4KyKRx4ux686fftPg==",
-      "path": "microsoft.extensions.options.configurationextensions/2.0.0",
-      "hashPath": "microsoft.extensions.options.configurationextensions.2.0.0.nupkg.sha512"
+      "sha512": "sha512-w/MP147fSqlIcCymaNpLbjdJsFVkSJM9Sz+jbWMr1gKMDVxoOS8AuFjJkVyKU/eydYxHIR/K1Hn3wisJBW5gSg==",
+      "path": "microsoft.extensions.options.configurationextensions/2.1.0",
+      "hashPath": "microsoft.extensions.options.configurationextensions.2.1.0.nupkg.sha512"
     },
     "Microsoft.Extensions.Primitives/5.0.0": {
       "type": "package",
@@ -535,6 +657,55 @@
       "sha512": "sha512-Nug3rO+7Kl5/SBAadzSMAVgqDlfGjJZ0GenQrLywJ84XGKO0uRqkunz5Wyl0SDwcR71bAATXvSdbdzPrYRYKGw==",
       "path": "microsoft.openapi/1.2.3",
       "hashPath": "microsoft.openapi.1.2.3.nupkg.sha512"
+    },
+    "OpenTelemetry/1.2.0-rc2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-R+U1r17O2z8oLeaFImB+OZoNWzCGUPHAPcXmzzybRApOaOmkJo5+QrmiDH2LOKDtQEGyGHReOVB/+oM/1l/EEA==",
+      "path": "opentelemetry/1.2.0-rc2",
+      "hashPath": "opentelemetry.1.2.0-rc2.nupkg.sha512"
+    },
+    "OpenTelemetry.Api/1.2.0-rc2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-KEY2yObL8grbMqbtIwSbUCE7fVRI1elhv2I6lF/NoG1hiIpgdGZIuqbArfyixiOYe7zp2do/e0Nz4JfTR0rVaQ==",
+      "path": "opentelemetry.api/1.2.0-rc2",
+      "hashPath": "opentelemetry.api.1.2.0-rc2.nupkg.sha512"
+    },
+    "OpenTelemetry.Exporter.Console/1.1.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-O8IrVRrfFO2cu1KruK6Wv9k6elnwJ7KddEd5V1ukrVSFfEk/eFJeNwTdiROLFzKYM77zfDNLpw0M9PUZK2gGdQ==",
+      "path": "opentelemetry.exporter.console/1.1.0",
+      "hashPath": "opentelemetry.exporter.console.1.1.0.nupkg.sha512"
+    },
+    "OpenTelemetry.Exporter.Jaeger/1.1.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-biJWcfWRzR3t+Yr98iNmw/PHB+QeNe4Kd1qa4zx2ie3KHVt36H+P5dzY8f6dHSpEhlrgkm/yn4GHDjLFga9+YQ==",
+      "path": "opentelemetry.exporter.jaeger/1.1.0",
+      "hashPath": "opentelemetry.exporter.jaeger.1.1.0.nupkg.sha512"
+    },
+    "OpenTelemetry.Extensions.Hosting/1.0.0-rc9": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-ZUbFItxbAoONPND756uu8bwAC2fEAd27Dw1yGNci2b/ZPQcf5aQfcUopOJERze6+r/MFO6huLR2H9PqfmFWR3Q==",
+      "path": "opentelemetry.extensions.hosting/1.0.0-rc9",
+      "hashPath": "opentelemetry.extensions.hosting.1.0.0-rc9.nupkg.sha512"
+    },
+    "OpenTelemetry.Instrumentation.AspNetCore/1.0.0-rc9": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-SzSDrLz07Xz0ouj2TwHE9xdB234qSt3c5kMsK9IOUadacrZ22zxNKI5XGIA2WssZvxSTQ7xmf4W0JURFYLMMMw==",
+      "path": "opentelemetry.instrumentation.aspnetcore/1.0.0-rc9",
+      "hashPath": "opentelemetry.instrumentation.aspnetcore.1.0.0-rc9.nupkg.sha512"
+    },
+    "OpenTelemetry.Instrumentation.Http/1.0.0-rc9": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-LCBtkcKNSG1DN7s3+wgDt2fwsVPxB3Qb3ANNi+L5TvoBP7WXrIVSjjPFs05ZNlq4JvpCzEL4JtS/5BLBMAN+xQ==",
+      "path": "opentelemetry.instrumentation.http/1.0.0-rc9",
+      "hashPath": "opentelemetry.instrumentation.http.1.0.0-rc9.nupkg.sha512"
     },
     "prometheus-net/5.0.2": {
       "type": "package",
@@ -648,12 +819,26 @@
       "path": "swashbuckle.aspnetcore.swaggerui/6.2.3",
       "hashPath": "swashbuckle.aspnetcore.swaggerui.6.2.3.nupkg.sha512"
     },
+    "System.Collections.Immutable/1.4.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-71hw5RUJRu5+q/geUY69gpXD8Upd12cH+F3MwpXV2zle7Bqqkrmc1JblOTuvUcgmdnUtQvBlV5e1d6RH+H2lvA==",
+      "path": "system.collections.immutable/1.4.0",
+      "hashPath": "system.collections.immutable.1.4.0.nupkg.sha512"
+    },
     "System.Console/4.3.0": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-DHDrIxiqk1h03m6khKWV2X8p/uvN79rgSqpilL6uzpmSfxfU5ng8VcPtW4qsDsQDHiTv6IPV9TmD5M/vElPNLg==",
       "path": "system.console/4.3.0",
       "hashPath": "system.console.4.3.0.nupkg.sha512"
+    },
+    "System.Diagnostics.DiagnosticSource/6.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-frQDfv0rl209cKm1lnwTgFPzNigy2EKk1BS3uAvHvlBVKe5cymGyHO+Sj+NLv5VF/AhHsqPIUUwya5oV4CHMUw==",
+      "path": "system.diagnostics.diagnosticsource/6.0.0",
+      "hashPath": "system.diagnostics.diagnosticsource.6.0.0.nupkg.sha512"
     },
     "System.Globalization/4.3.0": {
       "type": "package",
@@ -675,6 +860,13 @@
       "sha512": "sha512-KMiAFoW7MfJGa9nDFNcfu+FpEdiHpWgTcS2HdMpDvt9saK3y/G4GwprPyzqjFH9NTaGPQeWNHU+iDlDILj96aQ==",
       "path": "system.reflection/4.3.0",
       "hashPath": "system.reflection.4.3.0.nupkg.sha512"
+    },
+    "System.Reflection.Emit.Lightweight/4.7.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-a4OLB4IITxAXJeV74MDx49Oq2+PsF6Sml54XAFv+2RyWwtDBcabzoxiiJRhdhx+gaohLh4hEGCLQyBozXoQPqA==",
+      "path": "system.reflection.emit.lightweight/4.7.0",
+      "hashPath": "system.reflection.emit.lightweight.4.7.0.nupkg.sha512"
     },
     "System.Reflection.Extensions/4.3.0": {
       "type": "package",
@@ -703,6 +895,13 @@
       "sha512": "sha512-JufQi0vPQ0xGnAczR13AUFglDyVYt4Kqnz1AZaiKZ5+GICq0/1MH/mO/eAJHt/mHW1zjKBJd7kV26SrxddAhiw==",
       "path": "system.runtime/4.3.0",
       "hashPath": "system.runtime.4.3.0.nupkg.sha512"
+    },
+    "System.Runtime.CompilerServices.Unsafe/6.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-/iUeP3tq1S0XdNNoMz5C9twLSrM/TH+qElHkXWaPvuNOt+99G75NrV0OS2EqHx5wMN7popYjpc8oTjC1y16DLg==",
+      "path": "system.runtime.compilerservices.unsafe/6.0.0",
+      "hashPath": "system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512"
     },
     "System.Runtime.Handles/4.3.0": {
       "type": "package",

@@ -17,6 +17,41 @@ services:
       - grafana-data:/var/lib/grafana
     environment:
       - GF_SECURITY_ADMIN_PASSWORD=admin
+  jaeger:
+    image: jaegertracing/all-in-one
+    environment:
+    - BADGER_EPHEMERAL=false
+    - SPAN_STORAGE_TYPE=badger
+    - BADGER_DIRECTORY_VALUE=/badger/data
+    - BADGER_DIRECTORY_KEY=/badger/key
+    - BADGER_SPAN_STORE_TT=8h
+    - COLLECTOR_ZIPKIN_HTTP_PORT=19411
+    volumes:
+    - badger_data:/badger/data
+    - badger_key:/badger/key
+    ports:
+    - 6831:6831/udp  #microsoft publish events here
+    - 16686:16686 #Browse to http://localhost:16686
+  loggingapi:
+    build: ../
+    ports:
+      - 80:80
+    environment:
+    - ASPNETCORE_ENVIRONMENT=Development
+    - ASPNETCORE_URLS=http://+:80
+    - openTelemetry__jaegerHost=jaeger
+    depends_on:
+    - jaeger
+  forecasttester:
+    build: ../../ForecastTester
+    environment:
+    - openTelemetry__jaegerHost=jaeger
+    depends_on:
+    - loggingapi
+    - jaeger
+  
 volumes:
   prometheus-data:
   grafana-data:
+  badger_data:
+  badger_key:
